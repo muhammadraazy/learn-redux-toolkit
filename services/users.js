@@ -7,6 +7,7 @@ const request = (url) => `${url}`;
 const users = createApi({
     reducerPath: "users",
     baseQuery: fetchBaseQuery({ baseUrl }),
+    tagTypes: ['users'],
     endpoints: (builder) => ({
         getUsers: builder.query({
             query: () => request('/users')

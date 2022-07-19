@@ -3,17 +3,15 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useGetUsersQuery } from "../../services/users"
 
 const Todo = () => {
-    const { data, error, isLoading } = useGetUsersQuery()
+    const { data: users, isLoading } = useGetUsersQuery({ pollingInterval: 3000 })
     const dispatch = useDispatch()
     const [id, setId] = useState(0)
     const [name, setName] = useState('')
     const [age, setAge] = useState('')
 
-    console.log(data)
-
   return (
     <div className="p-4">
-        <form onSubmit={(e) => e.preventDefault()} className="w-auto">
+        <form onSubmit={(e) => e.preventDefault()} className="grid grid-cols-1 gap-4 w-96">
             <input 
                 value={id} type="text" 
                 placeholder="enter something" 
@@ -38,19 +36,23 @@ const Todo = () => {
             <button
                 type="submit"
                 className="bg-slate-800 text-white px-3 py-2 rounded-lg shadow-lg"> 
-                Add Todo 
+                Add Users 
             </button>
         </form>
 
-        {/* { todos.map((todo, index) => (
-            <div className="p-4 mt-4 text-white bg-slate-800 w-52 rounded-lg" key={todo.id}>
-                <h2 className='flex justify-between items-center'> 
-                    +{todo.name} 
-                    <span 
-                        className="text-2xl cursor-pointer"> <strong> X </strong> </span> 
-                </h2>
+        { isLoading ? <h2> Loading ... </h2> : 
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
+                { users.map((user, index) => (
+                <div className="p-4 mt-4 text-white bg-slate-800 w-52 rounded-lg" key={user.id}>
+                    <h2 className='flex justify-between items-center'> 
+                        +{user.name} 
+                        <span 
+                            className="text-2xl cursor-pointer"> <strong> X </strong> </span> 
+                    </h2>
+                </div>
+                )) }
             </div>
-        )) } */}
+         }
     </div>
   )
 }
