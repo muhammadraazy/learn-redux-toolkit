@@ -1,5 +1,4 @@
 import React from 'react'
-import { Todo } from "../components"
 
 const style = {
   flex: 7
@@ -8,7 +7,7 @@ const style = {
 const Home = () => {
   return (
     <div>
-       <Todo />
+       Home
     </div>
   )
 }

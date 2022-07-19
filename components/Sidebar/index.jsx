@@ -9,13 +9,13 @@ const Sidebar = () => {
             <nav>
                <ul className='text-white'>
                    <Link href="/rtk-basic" passHref>
-                      <li>RTK Basic</li> 
+                      <li className="cursor-pointer">RTK Basic</li> 
                    </Link>
-                   <Link href="/rtk-basic" passHref>
-                      <li>RTK Query</li> 
+                   <Link href="/rtk-query" passHref>
+                      <li className="cursor-pointer">RTK Query</li> 
                    </Link>
-                   <Link href="/rtk-basic" passHref>
-                      <li>RTK Async</li> 
+                   <Link  href="/rtk-async" passHref>
+                      <li className="cursor-pointer">RTK Async</li> 
                    </Link>
                </ul>
             </nav>
