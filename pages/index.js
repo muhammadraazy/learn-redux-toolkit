@@ -1,13 +1,10 @@
 import React from 'react'
-
-const style = {
-  flex: 7
-}
+import { Todos } from "../components"
 
 const Home = () => {
   return (
     <div>
-       Home
+       <Todos />
     </div>
   )
 }

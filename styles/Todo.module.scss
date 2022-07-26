@@ -1,0 +1,19 @@
+@use 'sass:map';
+
+$light: true;
+
+$myColors: (
+    primary: 'darkblue',
+    secondary: 'gray',
+    third: 'orange',
+    fourth: 'salmon'
+);
+
+.container {
+    padding: 20px;
+    color: orange;
+
+    & .list_item_primary {
+        color: gray;
+    } 
+}

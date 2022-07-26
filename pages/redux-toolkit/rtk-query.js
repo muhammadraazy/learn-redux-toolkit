@@ -1,10 +1,10 @@
 import React from 'react'
-import { Users } from "../components"
+import { Todos } from "../../components"
 
 const rtkQuery = () => {
   return (
     <div>
-      <Users />
+      <Todos />
     </div>
   )
 }
